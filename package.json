@@ -28,5 +28,8 @@
     "live-server": "^1.0.0",
     "node-sass": "^3.8.0",
     "npm-run-all": "^2.2.2"
+  },
+  "dependencies": {
+    "normalize.css": "^4.1.1"
   }
 }
