@@ -4,14 +4,18 @@
   "description": "Simon Bats portfolio",
   "scripts": {
     "post-install": "npm run dist",
-    "dist": "npm-run-all copy sass",
+    "dist": "npm-run-all copy style",
     "clean": "rm -r dist",
-    "copy": "cpx \"src/**/*.{html,png,jpg,ico,svg,xml,json}\" dist",
+    "copy": "cpx \"src/**/*.{html,png,jpg,jpeg,ico,svg,xml,json}\" dist",
     "copy-watch": "npm run copy -- -w",
-    "sass": "node-sass src/style/main.scss dist/style/main.css",
+    "sass": "node-sass src/style/main.scss src/style/main.css",
     "sass-watch": "npm run sass -- -w",
+    "css": "postcss --use autoprefixer --use cssnano src/style/main.css -o dist/style/main.css",
+    "css-watch": "npm run css -- -w",
+    "style": "npm-run-all sass css",
+    "style-watch": "npm-run-all --parallel sass-watch css-watch",
     "serve": "live-server --open=dist --watch=dist",
-    "start": "npm-run-all --parallel serve copy-watch sass-watch"
+    "start": "npm-run-all --parallel serve copy-watch style-watch"
   },
   "repository": {
     "type": "git",
@@ -24,10 +28,14 @@
   },
   "homepage": "https://github.com/SBats/portfolio#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
     "cpx": "^1.3.1",
+    "cssnano": "^3.7.1",
     "live-server": "^1.0.0",
     "node-sass": "^3.8.0",
-    "npm-run-all": "^2.2.2"
+    "npm-run-all": "^2.2.2",
+    "postcss": "^5.0.21",
+    "postcss-cli": "^2.5.2"
   },
   "dependencies": {
     "normalize.css": "^4.1.1"
