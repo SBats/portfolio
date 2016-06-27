@@ -1,0 +1,17 @@
+{
+  "name": "sbats-portfolio",
+  "version": "1.0.0",
+  "description": "Simon Bats portfolio",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBats/portfolio.git"
+  },
+  "author": "Simon Bats <simon.bats12@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SBats/portfolio/issues"
+  },
+  "homepage": "https://github.com/SBats/portfolio#readme"
+}
