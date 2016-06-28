@@ -1,0 +1,12 @@
+{
+  "use": ["autoprefixer", "cssnano"],
+  "input": "src/style/main.css",
+  "output": "dist/style/main.css",
+  "local-plugins": true,
+  "autoprefixer": {
+    "browsers": "last 2 versions"
+  },
+  "cssnano": {
+    "baseUrl": "/res"
+  }
+}
