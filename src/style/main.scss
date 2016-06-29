@@ -110,7 +110,7 @@ main {
 header {
   background: linear-gradient(
                 to bottom,
-                transparentize(lighten($main-color, 10%), 0.4) 0%,
+                transparentize(lighten($main-color, 10%), 0.3) 0%,
                 transparentize($main-color, 0) 100%
               ),
               url('../img/repeat-bg.jpg') top center no-repeat;
@@ -123,15 +123,24 @@ header {
   font-weight: 400;
 }
 
+.name {
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.4rem;
+}
+
+.job {
+  margin-top: 0;
+}
+
 .logo {
   width: 5rem;
   height: 5rem;
   margin: auto;
-  // background: transparentize($main-color, 0.4);
+  background: transparentize($main-color, 0.4);
   border-radius: 50%;
   overflow: hidden;
   padding: 0.2rem;
-  box-shadow: 0px 1px 3px 0px transparentize(black, 0.6);
 
   img {
     max-width: 100%;
@@ -142,18 +151,28 @@ header {
 .intro {
   margin: 4rem 0;
   font-size: 1.2rem;
+  line-height: 1.6em;
 }
 
 .contact {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   &-item {
+    flex: 1 1 50%;
     display: inline-block;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      flex-basis: 25%;
+    }
 
     a {
       display: block;
-      margin: 1rem;
+      margin: 1rem auto;
       width: 3rem;
       height: 3rem;
     }
@@ -176,7 +195,7 @@ section {
   margin-bottom: 4rem;
 
   a {
-    font-weight: 700;
+    // font-weight: 700;
   }
 
   h1 {
@@ -200,5 +219,41 @@ section {
     &::after {
       margin-left: 0.8rem;
     }
+  }
+}
+
+// FOOTER
+
+footer {
+  overflow: hidden;
+  font-size: 0.8rem;
+  margin-top: 6rem;
+  padding: 0.4rem 0;
+  color: $grey;
+  border-top: 1px solid $lighter-grey;
+
+  @media screen and (min-width: $tablet) {
+    margin: 4rem 0 -3rem;
+  }
+
+  a {
+    color: currentColor;
+  }
+}
+
+.credits, .sources {
+  margin: 0;
+  display: inline-block;
+}
+
+.credits {
+
+}
+
+.sources {
+  &:after {
+    content: "-";
+    display: inline-block;
+    margin: 0 0.3rem;
   }
 }
